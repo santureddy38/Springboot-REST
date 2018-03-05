@@ -119,9 +119,15 @@ public class TODOItemController {
                     HttpStatus.NOT_FOUND);
         }
  
-        currentToDoItem.setDescription(toDoItem.getDescription());
-        currentToDoItem.setTitle(toDoItem.getTitle());
-        currentToDoItem.setDueDate(toDoItem.getDueDate());
+         if(toDoItem.getTitle() != null){
+        	currentToDoItem.setTitle(toDoItem.getTitle());
+        }
+        if(toDoItem.getDescription()!= null){
+        	 currentToDoItem.setDescription(toDoItem.getDescription());
+        }
+        if(toDoItem.getDueDate() != null) {
+        	currentToDoItem.setDueDate(toDoItem.getDueDate());
+        }
  
         toDoItemService.updateToDoItem(currentToDoItem);
         
